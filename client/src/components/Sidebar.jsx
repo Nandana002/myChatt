@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { Users, Hash, Circle, Search, Bell, BellOff } from 'lucide-react';
 import classNames from 'classnames';
+import Stories from './Stories';
 
 const Sidebar = ({ users, activeChat, onSelectChat, currentUser, unreadCounts, onProfileClick, soundsEnabled, onToggleSounds }) => {
     const [searchQuery, setSearchQuery] = useState('');
@@ -49,8 +50,12 @@ const Sidebar = ({ users, activeChat, onSelectChat, currentUser, unreadCounts, o
 
             <div className="flex-1 overflow-y-auto custom-scrollbar p-3 space-y-1">
 
+                {/* Stories Section */}
+                <div className="mb-4">
+                    <Stories currentUser={currentUser} />
+                </div>
 
-                <p className="text-[10px] font-bold text-gray-500 uppercase tracking-widest px-4 py-2 mt-4 flex justify-between items-center">
+                <p className="text-[10px] font-bold text-gray-500 uppercase tracking-widest px-4 py-2 flex justify-between items-center">
                     <span>Online Users</span>
                     <span className="bg-dark-700 px-1.5 py-0.5 rounded text-gray-400">{filteredUsers.length}</span>
                 </p>
