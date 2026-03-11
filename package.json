@@ -1,0 +1,11 @@
+{
+  "name": "mychatt",
+  "version": "1.0.0",
+  "description": "Lumix Chat Application",
+  "scripts": {
+    "build": "npm install --prefix client && npm run build --prefix client && npm install --prefix server",
+    "start": "NODE_ENV=production node server/index.js",
+    "server": "npm run dev --prefix server",
+    "client": "npm run dev --prefix client"
+  }
+}
