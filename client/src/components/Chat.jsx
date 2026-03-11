@@ -7,7 +7,9 @@ import ProfileEdit from './ProfileEdit';
 import { Menu, MoreVertical, LogOut, Palette, Image as ImageIcon } from 'lucide-react';
 import { messagesAPI } from '../services/api';
 
-const ENDPOINT = 'http://localhost:5000'; // Dev URL
+const ENDPOINT = import.meta.env.PROD 
+    ? window.location.origin 
+    : 'http://localhost:5000';
 
 const Chat = ({ user, onLogout }) => {
     const [socket, setSocket] = useState(null);

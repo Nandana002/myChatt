@@ -1,6 +1,8 @@
 import axios from 'axios';
 
-const API_URL = 'http://localhost:5000/api';
+const API_URL = import.meta.env.PROD 
+    ? '/api' 
+    : 'http://localhost:5000/api';
 
 // Set auth token for all requests
 const setAuthToken = (token) => {
